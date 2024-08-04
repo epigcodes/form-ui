@@ -1,0 +1,77 @@
+body {
+    font-family: "Josefin Sans", sans-serif;
+    margin: 20px auto;
+    max-width: 400px;
+  }
+  fieldset>div{
+    margin-bottom:20px;
+    display: flex;
+    flex-flow:row wrap;
+  }
+  input + span{
+    position: relative;
+  }
+  input:required + span::after{
+    font-size:0.7em;
+    position: absolute;
+    content: "required";
+    color:white;
+    background:black;
+    padding:5px 10px;
+    top:-26px;
+    left:-70px;
+  }
+  input + span {
+    position: relative;
+  }
+  
+  input + span::before {
+    position: absolute;
+    right: -10px;
+    top: 5px;
+  }
+  input:invalid{
+    border:2px solid red;
+  }
+  input:invalid + span::before{
+    content:"x";
+    color: red;
+  }
+  
+input:valid + span::before {
+    content: "✓";
+    color: green;
+  }
+  legend{
+    color:white;
+    background:black;
+    padding:5px 10px;
+  }
+  button,
+  label,
+  input {
+    display: block;
+    font-family: inherit;
+    font-size: 100%;
+    margin: 0;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 5px;
+    height: 30px;
+  } 
+  #email{
+    margin-bottom: 20px;
+  }
+  input:out-of-range + span::after {
+    color: white;
+    background-color: red;
+    width: 155px;
+    content: "Outside allowable value range";
+    left: -182px;
+  }
+input:required{
+    border: 1px solid black;
+}
+input:optional{
+    border:1px solid silver;
+}
